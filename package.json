@@ -1,0 +1,21 @@
+{
+  "name": "nutricare",
+  "version": "1.0.0",
+  "description": "NUTRICARE – Complete Body Health, Nutrition & Activity Monitoring App",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npx tsx src/index.ts",
+    "test:server": "cd server && npm test"
+  },
+  "keywords": [
+    "health",
+    "nutrition",
+    "fitness",
+    "monitoring",
+    "diet-planner"
+  ],
+  "author": "NutriCare Team",
+  "license": "ISC"
+}
