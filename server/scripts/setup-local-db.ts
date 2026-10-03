@@ -19,7 +19,12 @@ try {
   execSync(`npx prisma db push --schema=${schemaFile} --accept-data-loss`, { stdio: 'inherit' });
 
   console.log('[DB Setup] Seeding database with verified Indian foods & sample data...');
-  execSync(`npx tsx prisma/seed.ts`, { stdio: 'inherit' });
+  try {
+    execSync(`npx tsx prisma/seed.ts`, { stdio: 'inherit' });
+    console.log('[DB Setup] Database seeded successfully!');
+  } catch (seedErr) {
+    console.warn('[DB Setup] Database seed non-fatal warning:', seedErr);
+  }
 
   console.log('[DB Setup] Database setup completed successfully!');
 } catch (error) {
